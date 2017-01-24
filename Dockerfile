@@ -41,9 +41,9 @@ RUN curl -fsSL 'https://xdebug.org/files/xdebug-2.4.0.tgz' -o xdebug.tar.gz \
     && docker-php-ext-enable xdebug
 
 # install oracle client
-COPY /conf/instantclient-basic-linux.x64-12.1.0.2.0.zip /tmp/
-COPY /conf/instantclient-sdk-linux.x64-12.1.0.2.0.zip /tmp/
-COPY /conf/instantclient-sqlplus-linux.x64-12.1.0.2.0.zip /tmp/
+COPY /oracle/instantclient-basic-linux.x64-12.1.0.2.0.zip /tmp/
+COPY /oracle/instantclient-sdk-linux.x64-12.1.0.2.0.zip /tmp/
+COPY /oracle/instantclient-sqlplus-linux.x64-12.1.0.2.0.zip /tmp/
 
 RUN unzip /tmp/instantclient-basic-linux.x64-12.1.0.2.0.zip -d /usr/local/
 RUN unzip /tmp/instantclient-sdk-linux.x64-12.1.0.2.0.zip -d /usr/local/
