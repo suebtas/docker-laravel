@@ -17,9 +17,13 @@ RUN apt-get update && apt-get install -y \
       pdo_mysql \
       pgsql \
       zip \
-      opcache \
-      unzip \
-      libaio-dev
+      opcache 
+
+# Install Oracle
+RUN apt-get update && \
+    apt-get install -y \
+    unzip \
+    libaio-dev
 
 # Install Xdebug
 RUN curl -fsSL 'https://xdebug.org/files/xdebug-2.4.0.tgz' -o xdebug.tar.gz \
