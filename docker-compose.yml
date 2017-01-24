@@ -5,7 +5,7 @@ web:
   links:
     - db_app
   volumes:
-    - .:/var/www/html
+    - /var/www/html
     - "./php.ini:/usr/local/etc/php/php.ini"
   environment:
     DB_HOST: db_app
