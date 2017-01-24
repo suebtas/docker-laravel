@@ -61,4 +61,8 @@ RUN a2dissite 000-default.conf && a2ensite laravel.conf && a2enmod rewrite
 # Change uid and gid of apache to docker user uid/gid
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
+# set Oracle 
+RUN export ORACLE_HOME=/usr/local/instantclient_12_1
+RUN export LD_LIBRARY_PATH="$ORACLE_HOME"
+RUN export PATH="$ORACLE_HOME:$PATH"
 WORKDIR /var/www/html
